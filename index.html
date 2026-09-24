@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>The Lankan Table | Discover Sri Lankan Cuisine</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 
-
+    <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -19,11 +19,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-          </head>
+</head>
 
 <body>
 
@@ -45,239 +44,441 @@
 
 </div>
 
+
+<!-- ================= HEADER ================= -->
+
 <header>
 
+    <nav class="navbar">
 
-    <!-- ================= HEADER ================= -->
-
-    <header>
-        <nav class="navbar">
-
-            <div class="logo">
-                <h2>🇱🇰 The Lankan Table</h2>
-            </div>
-
-           <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="foods.html">Foods</a></li>
-    <li><a href="#">Gallery</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
-</ul>
-
-            <button class="dark-mode-btn">
-                <i class="fa-solid fa-moon"></i>
-            </button>
-
-        </nav>
-    </header>
-
-    <!-- ================= HERO ================= -->
-
-   <section class="hero" data-aos="fade-up">
-
-        <div class="hero-text">
-
-            <h1>
-                Discover the Taste of
-                <span>Sri Lanka</span>
-            </h1>
-
-            <p>
-                Experience authentic Sri Lankan cuisine,
-                traditional recipes, and unforgettable flavors.
-            </p>
-
-            <button class="hero-btn">
-                Explore Foods
-            </button>
-
+        <div class="logo">
+            <h2>🇱🇰 The Lankan Table</h2>
         </div>
 
-        <div class="hero-image">
+        <ul class="nav-links">
 
-            <img src="images/rice-curry.jpg"
-                 alt="Sri Lankan Rice and Curry">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
 
-        </div>
+            <li>
+                <a href="foods.html">Foods</a>
+            </li>
 
-    </section>
+            <li>
+                <a href="gallery.html">Gallery</a>
+            </li>
 
-    <!-- ================= SEARCH SECTION ================= -->
+            <li>
+                <a href="about.html">About</a>
+            </li>
 
-    <section class="search-section">
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
 
-        <h2>Search Your Favorite Food</h2>
+        </ul>
 
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Search food..."
-        >
+        <button class="dark-mode-btn">
+            <i class="fa-solid fa-moon"></i>
+        </button>
 
-    </section>
+    </nav>
 
-    <!-- ================= FEATURED FOODS ================= -->
-
-   <section class="featured" data-aos="fade-up">
-
-        <h2 class="section-title">Featured Sri Lankan Foods</h2>
-
-        <div class="food-container">
-
-     <div class="food-card" data-name="Rice Curry">
-    <img src="images/rice-curry.jpg" alt="Rice and Curry">
-    <h3>Rice & Curry</h3>
-    <p>The most popular traditional Sri Lankan meal.</p>
-    <button>Read More</button>
-</div>
-
-            <div class="food-card" data-name="Kottu Roti">
-    <img src="images/kottu.jpg" alt="Kottu">
-    <h3>Kottu Roti</h3>
-    <p>A famous Sri Lankan street food loved by everyone.</p>
-    <button>Read More</button>
-</div>
-
-            <div class="food-card" data-name="Hoppers">
-    <img src="images/hoppers.jpg" alt="Hoppers">
-    <h3>Hoppers</h3>
-    <p>Crispy bowl-shaped pancakes served with curry.</p>
-    <button>Read More</button>
-</div>
-
-        </div>
-
-    </section>
+</header>
 
 
-    <!-- ================= FOOD CATEGORIES ================= -->
+<!-- ================= HERO ================= -->
 
-<section class="categories" data-aos="fade-up">
+<section class="hero" data-aos="fade-up">
 
-    <h2 class="section-title">Food Categories</h2>
+    <div class="hero-text">
 
-    <div class="category-container">
+        <h1>
+            Discover the Taste of
+            <span>Sri Lanka</span>
+        </h1>
 
-        <div class="category-card">
-            🍛
-            <h3>Rice & Curry</h3>
-        </div>
+        <p>
+            Experience authentic Sri Lankan cuisine,
+            traditional recipes, and unforgettable flavors.
+        </p>
 
-        <div class="category-card">
-            🍽️
-            <h3>Street Food</h3>
-        </div>
+        <!-- Explore Foods Button -->
+        <a href="foods.html" class="hero-btn">
+            Explore Foods
+        </a>
 
-        <div class="category-card">
-            🥞
-            <h3>Breakfast</h3>
-        </div>
+    </div>
 
-        <div class="category-card">
-            🍰
-            <h3>Desserts</h3>
-        </div>
 
-        <div class="category-card">
-            ☕
-            <h3>Beverages</h3>
-        </div>
+    <div class="hero-image">
+
+        <img src="images/rice-curry.jpg"
+             alt="Sri Lankan Rice and Curry">
 
     </div>
 
 </section>
+
+
+<!-- ================= SEARCH SECTION ================= -->
+
+<section class="search-section">
+
+    <h2>Search Your Favorite Food</h2>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search food..."
+    >
+
+</section>
+
+
+<!-- ================= FEATURED FOODS ================= -->
+
+<section class="featured" data-aos="fade-up">
+
+    <h2 class="section-title">
+        Featured Sri Lankan Foods
+    </h2>
+
+
+    <div class="food-container">
+
+
+        <!-- Rice & Curry -->
+
+        <div class="food-card" data-name="Rice Curry">
+
+            <img src="images/rice-curry.jpg"
+                 alt="Rice and Curry">
+
+            <h3>Rice & Curry</h3>
+
+            <p>
+                The most popular traditional Sri Lankan meal.
+            </p>
+
+            <button>
+                Read More
+            </button>
+
+        </div>
+
+
+        <!-- Kottu -->
+
+        <div class="food-card" data-name="Kottu Roti">
+
+            <img src="images/kottu.jpg"
+                 alt="Kottu">
+
+            <h3>Kottu Roti</h3>
+
+            <p>
+                A famous Sri Lankan street food loved by everyone.
+            </p>
+
+            <button>
+                Read More
+            </button>
+
+        </div>
+
+
+        <!-- Hoppers -->
+
+        <div class="food-card" data-name="Hoppers">
+
+            <img src="images/hoppers.jpg"
+                 alt="Hoppers">
+
+            <h3>Hoppers</h3>
+
+            <p>
+                Crispy bowl-shaped pancakes served with curry.
+            </p>
+
+            <button>
+                Read More
+            </button>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOD CATEGORIES ================= -->
+
+<section class="categories" data-aos="fade-up">
+
+    <h2 class="section-title">
+        Food Categories
+    </h2>
+
+
+    <div class="category-container">
+
+
+        <div class="category-card">
+
+            🍛
+
+            <h3>
+                Rice & Curry
+            </h3>
+
+        </div>
+
+
+        <div class="category-card">
+
+            🍽️
+
+            <h3>
+                Street Food
+            </h3>
+
+        </div>
+
+
+        <div class="category-card">
+
+            🥞
+
+            <h3>
+                Breakfast
+            </h3>
+
+        </div>
+
+
+        <div class="category-card">
+
+            🍰
+
+            <h3>
+                Desserts
+            </h3>
+
+        </div>
+
+
+        <div class="category-card">
+
+            ☕
+
+            <h3>
+                Beverages
+            </h3>
+
+        </div>
+
+
+    </div>
+
+</section>
+
 
 <!-- ================= WHY CHOOSE US ================= -->
 
 <section class="why-us" data-aos="fade-up">
 
-    <h2 class="section-title">Why Choose The Lankan Table?</h2>
+    <h2 class="section-title">
+        Why Choose The Lankan Table?
+    </h2>
+
 
     <div class="why-container">
 
+
         <div class="why-card">
+
             <i class="fa-solid fa-utensils"></i>
-            <h3>Authentic Recipes</h3>
-            <p>Traditional Sri Lankan dishes prepared with authentic flavors and ingredients.</p>
+
+            <h3>
+                Authentic Recipes
+            </h3>
+
+            <p>
+                Traditional Sri Lankan dishes prepared with
+                authentic flavors and ingredients.
+            </p>
+
         </div>
 
+
         <div class="why-card">
+
             <i class="fa-solid fa-leaf"></i>
-            <h3>Fresh Ingredients</h3>
-            <p>We showcase meals made with fresh vegetables, spices, and quality ingredients.</p>
+
+            <h3>
+                Fresh Ingredients
+            </h3>
+
+            <p>
+                We showcase meals made with fresh vegetables,
+                spices, and quality ingredients.
+            </p>
+
         </div>
 
+
         <div class="why-card">
+
             <i class="fa-solid fa-heart"></i>
-            <h3>Made with Love</h3>
-            <p>Every dish reflects Sri Lanka's rich food culture and warm hospitality.</p>
+
+            <h3>
+                Made with Love
+            </h3>
+
+            <p>
+                Every dish reflects Sri Lanka's rich food culture
+                and warm hospitality.
+            </p>
+
         </div>
+
 
     </div>
 
 </section>
+
+
 <!-- ================= FOOD GALLERY ================= -->
 
 <section class="gallery" data-aos="fade-up">
 
-    <h2 class="section-title">Sri Lankan Food Gallery</h2>
+    <h2 class="section-title">
+        Sri Lankan Food Gallery
+    </h2>
+
 
     <div class="gallery-container">
 
-        <img src="images/rice-curry.jpg" alt="Rice & Curry">
 
-        <img src="images/kottu.jpg" alt="Kottu Roti">
+        <img src="images/rice-curry.jpg"
+             alt="Rice & Curry">
 
-        <img src="images/hoppers.jpg" alt="Hoppers">
 
-        <img src="images/string-hoppers.jpg" alt="String Hoppers">
+        <img src="images/kottu.jpg"
+             alt="Kottu Roti">
 
-        <img src="images/lamprais.jpg" alt="Lamprais">
 
-        <img src="images/curd.jpg" alt="Curd & Treacle">
+        <img src="images/hoppers.jpg"
+             alt="Hoppers">
+
+
+        <img src="images/string-hoppers.jpg"
+             alt="String Hoppers">
+
+
+        <img src="images/lamprais.jpg"
+             alt="Lamprais">
+
+
+        <!-- Curd & Treacle -->
+
+        <img src="images/curd.jpg"
+             alt="Curd & Treacle">
+
 
     </div>
 
 </section>
+
+
 <!-- ================= CUSTOMER REVIEWS ================= -->
 
 <section class="reviews" data-aos="fade-up">
 
-    <h2 class="section-title">What Our Visitors Say</h2>
+    <h2 class="section-title">
+        What Our Visitors Say
+    </h2>
+
 
     <div class="review-container">
 
-        <div class="review-card">
-            <img src="images/rice-curry.jpg" alt="Customer">
-            <h3>John Smith</h3>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
-            <p>
-                Amazing website! I discovered many authentic Sri Lankan dishes.
-            </p>
-        </div>
+
+        <!-- Review 1 -->
 
         <div class="review-card">
-            <img src="images/kottu.jpg" alt="Customer">
-            <h3>Emily Brown</h3>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
+
+            <img src="images/user1.jpg"
+                 alt="John Smith">
+
+            <h3>
+                John Smith
+            </h3>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
             <p>
-                Beautiful design and delicious food recommendations.
+                Amazing website! I discovered many authentic
+                Sri Lankan dishes.
             </p>
+
         </div>
 
+
+        <!-- Review 2 -->
+
         <div class="review-card">
-            <img src="images/hoppers.jpg" alt="Customer">
-            <h3>David Lee</h3>
-            <div class="stars">⭐⭐⭐⭐⭐</div>
+
+            <img src="images/user2.jpg"
+                 alt="Emily Brown">
+
+            <h3>
+                Emily Brown
+            </h3>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
             <p>
-                I love Sri Lankan cuisine. This website is fantastic.
+                Beautiful design and delicious food
+                recommendations.
             </p>
+
         </div>
+
+
+        <!-- Review 3 -->
+
+        <div class="review-card">
+
+            <img src="images/user3.jpg"
+                 alt="David Lee">
+
+            <h3>
+                David Lee
+            </h3>
+
+            <div class="stars">
+                ⭐⭐⭐⭐⭐
+            </div>
+
+            <p>
+                I love Sri Lankan cuisine.
+                This website is fantastic.
+            </p>
+
+        </div>
+
 
     </div>
 
 </section>
+
 
 <!-- ================= FOOD MODAL ================= -->
 
@@ -285,9 +486,13 @@
 
     <div class="modal-content">
 
-        <span class="close">&times;</span>
+        <span class="close">
+            &times;
+        </span>
 
-        <img id="modalImage" src="" alt="Food Image">
+        <img id="modalImage"
+             src=""
+             alt="Food Image">
 
         <h2 id="modalTitle"></h2>
 
@@ -303,60 +508,123 @@
 <!-- ================= BACK TO TOP ================= -->
 
 <button id="topBtn" title="Go to top">
+
     <i class="fa-solid fa-arrow-up"></i>
+
 </button>
+
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="footer">
 
+
     <div class="footer-container">
 
+
+        <!-- About -->
+
         <div class="footer-box">
-            <h2>🇱🇰 The Lankan Table</h2>
+
+            <h2>
+                🇱🇰 The Lankan Table
+            </h2>
+
             <p>
-                Discover the authentic taste of Sri Lanka through our traditional cuisine and rich food culture.
+                Discover the authentic taste of Sri Lanka
+                through our traditional cuisine and rich
+                food culture.
             </p>
+
         </div>
+
+
+        <!-- Quick Links -->
 
         <div class="footer-box">
-            <h3>Quick Links</h3>
 
-            <a href="#">Home</a>
-            <a href="#">Foods</a>
-            <a href="#">Gallery</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="foods.html">
+                Foods
+            </a>
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
         </div>
+
+
+        <!-- Contact -->
 
         <div class="footer-box">
-            <h3>Contact</h3>
 
-            <p>📍 Colombo, Sri Lanka</p>
-            <p>📞 +94 77 123 4567</p>
-            <p>📧 info@thelankantable.com</p>
+            <h3>
+                Contact
+            </h3>
+
+            <p>
+                📍 Colombo, Sri Lanka
+            </p>
+
+            <p>
+                📞 +94 77 123 4567
+            </p>
+
+            <p>
+                📧 info@thelankantable.com
+            </p>
+
         </div>
+
 
     </div>
+
 
     <div class="footer-bottom">
-        <p>© 2026 The Lankan Table. All Rights Reserved.</p>
+
+        <p>
+            © 2026 The Lankan Table.
+            All Rights Reserved.
+        </p>
+
     </div>
+
 
 </footer>
 
 
-<!-- JavaScript -->
+<!-- ================= JAVASCRIPT ================= -->
+
 <script src="js/script.js"></script>
 
+
 <!-- AOS Animation JS -->
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
+
 AOS.init({
     duration: 1000,
     once: true
 });
+
 </script>
 
 
