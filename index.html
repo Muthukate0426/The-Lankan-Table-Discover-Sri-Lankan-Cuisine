@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,38 +13,66 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 
 <body>
 
     <!-- ================= HEADER ================= -->
 
     <header>
+
         <nav class="navbar">
 
             <div class="logo">
                 <h2>🇱🇰 The Lankan Table</h2>
             </div>
 
+
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="foods.html">Foods</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="foods.html">Foods</a>
+                </li>
+
+                <li>
+                    <a href="#gallery">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+
             </ul>
 
-            <button class="dark-mode-btn">
+
+            <!-- Dark Mode -->
+
+            <button class="dark-mode-btn" id="darkModeBtn" type="button">
+
                 <i class="fa-solid fa-moon"></i>
+
             </button>
 
         </nav>
+
     </header>
+
 
 
     <!-- ================= HERO ================= -->
@@ -53,20 +82,30 @@
         <div class="hero-text">
 
             <h1>
+
                 Discover the Taste of
+
                 <span>Sri Lanka</span>
+
             </h1>
 
+
             <p>
+
                 Experience authentic Sri Lankan cuisine,
                 traditional recipes, and unforgettable flavors.
+
             </p>
 
-            <button class="hero-btn">
+
+            <a href="foods.html" class="hero-btn">
+
                 Explore Foods
-            </button>
+
+            </a>
 
         </div>
+
 
         <div class="hero-image">
 
@@ -78,11 +117,13 @@
     </section>
 
 
+
     <!-- ================= SEARCH SECTION ================= -->
 
     <section class="search-section">
 
         <h2>Search Your Favorite Food</h2>
+
 
         <input
             type="text"
@@ -93,99 +134,312 @@
     </section>
 
 
+
     <!-- ================= FEATURED FOODS ================= -->
 
     <section class="featured">
 
-        <h2 class="section-title">Featured Sri Lankan Foods</h2>
+        <h2 class="section-title">
+
+            Featured Sri Lankan Foods
+
+        </h2>
+
 
         <div class="food-container">
 
+
+            <!-- Rice & Curry -->
+
             <div class="food-card">
 
-                <img src="rice-curry.jpg" alt="Rice and Curry">
+                <img
+                    src="rice-curry.jpg"
+                    alt="Rice and Curry"
+                >
 
-                <h3>Rice & Curry</h3>
+
+                <h3>
+
+                    Rice & Curry
+
+                </h3>
+
 
                 <p>
+
                     The most popular traditional Sri Lankan meal.
+
                 </p>
 
-                <button>Read More</button>
+
+                <a href="foods.html" class="food-btn">
+
+                    Read More
+
+                </a>
 
             </div>
 
 
+
+            <!-- Kottu -->
+
             <div class="food-card">
 
-                <img src="kottu.jpg" alt="Kottu">
+                <img
+                    src="kottu.jpg"
+                    alt="Kottu Roti"
+                >
 
-                <h3>Kottu Roti</h3>
+
+                <h3>
+
+                    Kottu Roti
+
+                </h3>
+
 
                 <p>
+
                     A famous Sri Lankan street food loved by everyone.
+
                 </p>
 
-                <button>Read More</button>
+
+                <a href="foods.html" class="food-btn">
+
+                    Read More
+
+                </a>
 
             </div>
 
 
+
+            <!-- Hoppers -->
+
             <div class="food-card">
 
-                <img src="hoppers.jpg" alt="Hoppers">
+                <img
+                    src="hoppers.jpg"
+                    alt="Sri Lankan Hoppers"
+                >
 
-                <h3>Hoppers</h3>
+
+                <h3>
+
+                    Hoppers
+
+                </h3>
+
 
                 <p>
+
                     Crispy bowl-shaped pancakes served with curry.
+
                 </p>
 
-                <button>Read More</button>
+
+                <a href="foods.html" class="food-btn">
+
+                    Read More
+
+                </a>
 
             </div>
 
         </div>
 
     </section>
+
 
 
     <!-- ================= FOOD CATEGORIES ================= -->
 
     <section class="categories">
 
-        <h2 class="section-title">Food Categories</h2>
+        <h2 class="section-title">
+
+            Food Categories
+
+        </h2>
+
 
         <div class="category-container">
 
-            <div class="category-card">
-                🍛
-                <h3>Rice & Curry</h3>
-            </div>
 
             <div class="category-card">
-                🍽️
-                <h3>Street Food</h3>
+
+                <div class="category-icon">
+                    🍛
+                </div>
+
+                <h3>
+                    Rice & Curry
+                </h3>
+
             </div>
 
-            <div class="category-card">
-                🥞
-                <h3>Breakfast</h3>
-            </div>
+
 
             <div class="category-card">
-                🍰
-                <h3>Desserts</h3>
+
+                <div class="category-icon">
+                    🍽️
+                </div>
+
+                <h3>
+                    Street Food
+                </h3>
+
             </div>
 
+
+
             <div class="category-card">
-                ☕
-                <h3>Beverages</h3>
+
+                <div class="category-icon">
+                    🥞
+                </div>
+
+                <h3>
+                    Breakfast
+                </h3>
+
+            </div>
+
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    🍰
+                </div>
+
+                <h3>
+                    Desserts
+                </h3>
+
+            </div>
+
+
+
+            <div class="category-card">
+
+                <div class="category-icon">
+                    ☕
+                </div>
+
+                <h3>
+                    Beverages
+                </h3>
+
             </div>
 
         </div>
 
     </section>
+
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section class="gallery" id="gallery">
+
+        <h2 class="section-title">
+
+            Sri Lankan Food Gallery
+
+        </h2>
+
+
+        <div class="gallery-container">
+
+
+            <img
+                src="rice-curry.jpg"
+                alt="Sri Lankan Rice and Curry"
+            >
+
+
+            <img
+                src="kottu.jpg"
+                alt="Sri Lankan Kottu"
+            >
+
+
+            <img
+                src="hoppers.jpg"
+                alt="Sri Lankan Hoppers"
+            >
+
+
+            <img
+                src="lamprais.jpg"
+                alt="Sri Lankan Lamprais"
+            >
+
+
+            <img
+                src="pittu.jpg"
+                alt="Sri Lankan Pittu"
+            >
+
+
+            <img
+                src="string-hoppers.jpg"
+                alt="Sri Lankan String Hoppers"
+            >
+
+
+            <img
+                src="pol-sambol.jpg"
+                alt="Sri Lankan Pol Sambol"
+            >
+
+
+            <img
+                src="watalappam.jpg"
+                alt="Sri Lankan Watalappam"
+            >
+
+
+            <img
+                src="milk-tea.jpg"
+                alt="Sri Lankan Milk Tea"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                🇱🇰 The Lankan Table
+            </h3>
+
+
+            <p>
+                Discover the authentic taste of Sri Lanka.
+            </p>
+
+
+            <p>
+                © 2026 The Lankan Table. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
 
 
     <!-- ================= JAVASCRIPT ================= -->
@@ -193,4 +447,5 @@
     <script src="script.js"></script>
 
 </body>
+
 </html>
