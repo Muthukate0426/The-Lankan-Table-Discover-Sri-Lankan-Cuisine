@@ -1,4 +1,3 @@
-```javascript
 // ===========================
 // Dark Mode
 // ===========================
@@ -101,7 +100,7 @@ const readButtons =
 
 const foodData = {
 
-    "Rice Curry": {
+    "Rice & Curry": {
 
         title: "Rice & Curry",
 
@@ -469,4 +468,3 @@ window.addEventListener("load", () => {
     }
 
 });
-```
