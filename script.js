@@ -1,3 +1,4 @@
+
 // ===========================
 // Dark Mode
 // ===========================
@@ -74,24 +75,11 @@ if (searchInput) {
 // ===========================
 
 const modal = document.getElementById("foodModal");
-
-const modalImage =
-    document.getElementById("modalImage");
-
-const modalTitle =
-    document.getElementById("modalTitle");
-
-const modalDescription =
-    document.getElementById("modalDescription");
-
-const modalPrice =
-    document.getElementById("modalPrice");
-
-const closeBtn =
-    document.querySelector(".close");
-
-const readButtons =
-    document.querySelectorAll(".food-card button");
+const modalImage = document.getElementById("modalImage");
+const modalTitle = document.getElementById("modalTitle");
+const modalDescription = document.getElementById("modalDescription");
+const modalPrice = document.getElementById("modalPrice");
+const closeBtn = document.querySelector(".close");
 
 
 // ===========================
@@ -101,142 +89,83 @@ const readButtons =
 const foodData = {
 
     "Rice & Curry": {
-
         title: "Rice & Curry",
-
         image: "images/rice-curry.jpg",
-
         description:
             "Rice & Curry is the most popular traditional Sri Lankan meal. It is usually served with rice, several vegetable curries, meat or fish curry, sambol and papadam.",
-
         price: "Price : Rs. 1200"
-
     },
-
 
     "Kottu Roti": {
-
         title: "Kottu Roti",
-
         image: "images/kottu.jpg",
-
         description:
             "Kottu Roti is one of Sri Lanka's most famous street foods. It is made by chopping godhamba roti together with vegetables, eggs, meat and spices.",
-
         price: "Price : Rs. 1500"
-
     },
-
 
     "Hoppers": {
-
         title: "Hoppers",
-
         image: "images/hoppers.jpg",
-
         description:
             "Hoppers are bowl-shaped Sri Lankan pancakes made from fermented rice flour and coconut milk. They can be enjoyed with curry, sambol or an egg in the center.",
-
         price: "Price : Rs. 800"
-
     },
-
 
     "String Hoppers": {
-
         title: "String Hoppers",
-
         image: "images/string-hoppers.jpg",
-
         description:
             "String Hoppers are soft steamed rice flour noodles. They are traditionally served with coconut sambol, dhal curry or other Sri Lankan curries.",
-
         price: "Price : Rs. 700"
-
     },
-
 
     "Lamprais": {
-
         title: "Lamprais",
-
         image: "images/lamprais.jpg",
-
         description:
             "Lamprais is a delicious rice meal influenced by Sri Lanka's Dutch Burgher heritage. Rice, meat curry, sambol and accompaniments are wrapped in a banana leaf and baked.",
-
         price: "Price : Rs. 1800"
-
     },
-
 
     "Pittu": {
-
         title: "Pittu",
-
         image: "images/pittu.jpg",
-
         description:
             "Pittu is a traditional Sri Lankan steamed dish made from rice flour and grated coconut. It is commonly served with coconut milk, curry or katta sambol.",
-
         price: "Price : Rs. 700"
-
     },
-
 
     "Fish Curry": {
-
         title: "Fish Curry",
-
         image: "images/fish-curry.jpg",
-
         description:
             "Sri Lankan Fish Curry is prepared with fresh fish, coconut milk or spices, curry leaves and aromatic ingredients. It is known for its rich and spicy flavor.",
-
         price: "Price : Rs. 1400"
-
     },
-
 
     "Pol Sambol": {
-
         title: "Pol Sambol",
-
         image: "images/pol-sambol.jpg",
-
         description:
             "Pol Sambol is a traditional Sri Lankan coconut sambol made with freshly grated coconut, chili, onion, lime and salt.",
-
         price: "Price : Rs. 500"
-
     },
-
 
     "Watalappam": {
-
         title: "Watalappam",
-
         image: "images/watalappam.jpg",
-
         description:
             "Watalappam is a traditional Sri Lankan coconut custard dessert made with coconut milk, jaggery, eggs and aromatic spices such as cardamom.",
-
         price: "Price : Rs. 600"
-
     },
 
-
     "Milk Tea": {
-
         title: "Milk Tea",
-
         image: "images/milk-tea.jpg",
-
         description:
             "Sri Lankan Milk Tea is a popular beverage made with strong Ceylon tea, milk and sugar. It is enjoyed throughout Sri Lanka.",
-
         price: "Price : Rs. 350"
-
     }
 
 };
@@ -246,33 +175,36 @@ const foodData = {
 // Open Food Modal
 // ===========================
 
+const readButtons =
+    document.querySelectorAll(".food-card button");
+
 if (
     modal &&
     modalImage &&
     modalTitle &&
     modalDescription &&
-    modalPrice &&
-    closeBtn
+    modalPrice
 ) {
 
     readButtons.forEach(button => {
 
-        button.addEventListener("click", () => {
+        button.addEventListener("click", function () {
 
+            // Get ONLY the card belonging to this button
             const foodCard =
-                button.closest(".food-card");
+                this.closest(".food-card");
 
             if (!foodCard) {
                 return;
             }
 
-
+            // Get the food name from this exact card
             const foodName =
-                foodCard.dataset.name;
+                foodCard.getAttribute("data-name");
 
+            // Get the matching food information
             const food =
                 foodData[foodName];
-
 
             if (!food) {
 
@@ -282,12 +214,10 @@ if (
                 );
 
                 return;
-
             }
 
-
+            // Update modal with this food's information
             modalImage.src = food.image;
-
             modalImage.alt = food.title;
 
             modalTitle.textContent =
@@ -299,7 +229,7 @@ if (
             modalPrice.textContent =
                 food.price;
 
-
+            // Open modal
             modal.style.display = "flex";
 
         });
@@ -311,16 +241,22 @@ if (
     // Close Modal
     // ===========================
 
-    closeBtn.addEventListener("click", () => {
+    if (closeBtn) {
 
-        modal.style.display = "none";
+        closeBtn.addEventListener("click", () => {
 
-    });
+            modal.style.display = "none";
+
+        });
+
+    }
 
 
-    // Close when clicking outside modal
+    // ===========================
+    // Close Modal Outside
+    // ===========================
 
-    window.addEventListener("click", event => {
+    window.addEventListener("click", (event) => {
 
         if (event.target === modal) {
 
@@ -331,14 +267,13 @@ if (
     });
 
 
-    // Close with Escape key
+    // ===========================
+    // Close Modal With Escape
+    // ===========================
 
-    document.addEventListener("keydown", event => {
+    document.addEventListener("keydown", (event) => {
 
-        if (
-            event.key === "Escape" &&
-            modal.style.display === "flex"
-        ) {
+        if (event.key === "Escape") {
 
             modal.style.display = "none";
 
@@ -365,7 +300,6 @@ const lightboxImage =
 const closeLightbox =
     document.querySelector(".close-lightbox");
 
-
 if (
     galleryImages.length > 0 &&
     lightbox &&
@@ -378,6 +312,7 @@ if (
         image.addEventListener("click", () => {
 
             lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
 
             lightbox.style.display = "flex";
 
@@ -403,6 +338,17 @@ if (
 
     });
 
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+
+            lightbox.style.display = "none";
+
+        }
+
+    });
+
 }
 
 
@@ -412,7 +358,6 @@ if (
 
 const topBtn =
     document.getElementById("topBtn");
-
 
 if (topBtn) {
 
@@ -434,11 +379,8 @@ if (topBtn) {
     topBtn.addEventListener("click", () => {
 
         window.scrollTo({
-
             top: 0,
-
             behavior: "smooth"
-
         });
 
     });
@@ -468,3 +410,4 @@ window.addEventListener("load", () => {
     }
 
 });
+```
