@@ -2,7 +2,8 @@
 // Dark Mode
 // ===========================
 
-const darkModeBtn = document.querySelector(".dark-mode-btn");
+const darkModeBtn =
+    document.querySelector(".dark-mode-btn");
 
 if (darkModeBtn) {
 
@@ -10,41 +11,72 @@ if (darkModeBtn) {
 
         document.body.classList.toggle("dark-mode");
 
-        const icon = darkModeBtn.querySelector("i");
+        const icon =
+            darkModeBtn.querySelector("i");
 
-        if (document.body.classList.contains("dark-mode")) {
-            icon.classList.remove("fa-moon");
-            icon.classList.add("fa-sun");
-        } else {
-            icon.classList.remove("fa-sun");
-            icon.classList.add("fa-moon");
+        if (icon) {
+
+            if (
+                document.body.classList.contains("dark-mode")
+            ) {
+
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun");
+
+            } else {
+
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon");
+
+            }
+
         }
 
     });
 
 }
 
+
 // ===========================
 // Food Search
 // ===========================
 
-const searchInput = document.getElementById("searchInput");
-const foodCards = document.querySelectorAll(".food-card");
+const searchInput =
+    document.getElementById("searchInput");
+
+const foodCards =
+    document.querySelectorAll(".food-card");
+
 
 if (searchInput) {
 
-    searchInput.addEventListener("keyup", () => {
+    searchInput.addEventListener("input", () => {
 
-        const searchValue = searchInput.value.toLowerCase();
+        const searchValue =
+            searchInput.value
+                .toLowerCase()
+                .trim();
+
 
         foodCards.forEach(card => {
 
-            const foodName = card.dataset.name.toLowerCase();
+            const foodName =
+                card.querySelector("h3")
+                    ?.textContent
+                    .toLowerCase()
+                    .trim() || "";
 
-            if (foodName.includes(searchValue)) {
-                card.style.display = "block";
+
+            if (
+                foodName.includes(searchValue)
+            ) {
+
+                card.style.display = "";
+
             } else {
+
                 card.style.display = "none";
+
             }
 
         });
@@ -53,189 +85,539 @@ if (searchInput) {
 
 }
 
+
 // ===========================
 // Food Modal
 // ===========================
 
-const modal = document.getElementById("foodModal");
-const modalImage = document.getElementById("modalImage");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-const modalPrice = document.getElementById("modalPrice");
-const closeBtn = document.querySelector(".close");
-const readButtons = document.querySelectorAll(".food-card button");
+const modal =
+    document.getElementById("foodModal");
 
-const foodData = [
+const modalImage =
+    document.getElementById("modalImage");
 
-    {
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalDescription =
+    document.getElementById("modalDescription");
+
+const modalPrice =
+    document.getElementById("modalPrice");
+
+const closeBtn =
+    document.querySelector(".close");
+
+
+const readButtons =
+    document.querySelectorAll(
+        ".food-card button"
+    );
+
+
+// ===========================
+// Food Information
+// ===========================
+
+const foodData = {
+
+    "Rice & Curry": {
+
         title: "Rice & Curry",
+
         image: "images/rice-curry.jpg",
-        description: "Rice & Curry is the most popular traditional Sri Lankan meal served with rice, vegetable curries, meat or fish, sambol, and papadam.",
+
+        description:
+            "Rice & Curry is the most popular traditional Sri Lankan meal. It is usually served with rice, several vegetable curries, meat or fish curry, sambol and papadam.",
+
         price: "Price : Rs. 1200"
+
     },
 
-    {
+
+    "Kottu Roti": {
+
         title: "Kottu Roti",
+
         image: "images/kottu.jpg",
-        description: "Kottu Roti is one of the most famous Sri Lankan street food dishes made with chopped roti, vegetables, eggs, and meat.",
+
+        description:
+            "Kottu Roti is one of Sri Lanka's most famous street foods. It is made by chopping godhamba roti together with vegetables, eggs, meat and spices.",
+
         price: "Price : Rs. 1500"
+
     },
 
-    {
+
+    "Hoppers": {
+
         title: "Hoppers",
+
         image: "images/hoppers.jpg",
-        description: "Hoppers are bowl-shaped pancakes made from fermented rice flour and coconut milk.",
+
+        description:
+            "Hoppers are bowl-shaped Sri Lankan pancakes made from fermented rice flour and coconut milk. They can be enjoyed with curry, sambol or an egg in the center.",
+
         price: "Price : Rs. 800"
+
+    },
+
+
+    "String Hoppers": {
+
+        title: "String Hoppers",
+
+        image: "images/string-hoppers.jpg",
+
+        description:
+            "String Hoppers are soft steamed rice flour noodles. They are traditionally served with coconut sambol, dhal curry or other Sri Lankan curries.",
+
+        price: "Price : Rs. 700"
+
+    },
+
+
+    "Lamprais": {
+
+        title: "Lamprais",
+
+        image: "images/lamprais.jpg",
+
+        description:
+            "Lamprais is a delicious rice meal influenced by Sri Lanka's Dutch Burgher heritage. Rice, meat curry, sambol and accompaniments are wrapped in a banana leaf and baked.",
+
+        price: "Price : Rs. 1800"
+
+    },
+
+
+    "Pittu": {
+
+        title: "Pittu",
+
+        image: "images/pittu.jpg",
+
+        description:
+            "Pittu is a traditional Sri Lankan steamed dish made from rice flour and grated coconut. It is commonly served with coconut milk, curry or katta sambol.",
+
+        price: "Price : Rs. 700"
+
+    },
+
+
+    "Fish Curry": {
+
+        title: "Fish Curry",
+
+        image: "images/fish-curry.jpg",
+
+        description:
+            "Sri Lankan Fish Curry is prepared with fresh fish, spices, curry leaves and aromatic ingredients. It is known for its rich and spicy flavor.",
+
+        price: "Price : Rs. 1400"
+
+    },
+
+
+    "Pol Sambol": {
+
+        title: "Pol Sambol",
+
+        image: "images/pol-sambol.jpg",
+
+        description:
+            "Pol Sambol is a traditional Sri Lankan coconut sambol made with freshly grated coconut, chili, onion, lime and salt.",
+
+        price: "Price : Rs. 500"
+
+    },
+
+
+    "Watalappam": {
+
+        title: "Watalappam",
+
+        image: "images/watalappam.jpg",
+
+        description:
+            "Watalappam is a traditional Sri Lankan coconut custard dessert made with coconut milk, jaggery, eggs and aromatic spices such as cardamom.",
+
+        price: "Price : Rs. 600"
+
+    },
+
+
+    "Milk Tea": {
+
+        title: "Milk Tea",
+
+        image: "images/milk-tea.jpg",
+
+        description:
+            "Sri Lankan Milk Tea is a popular beverage made with strong Ceylon tea, milk and sugar. It is enjoyed throughout Sri Lanka.",
+
+        price: "Price : Rs. 350"
+
     }
 
-];
+};
 
-if (modal && closeBtn && readButtons.length > 0) {
 
-    readButtons.forEach((button, index) => {
+// ===========================
+// Open Food Modal
+// ===========================
+
+if (
+    modal &&
+    modalImage &&
+    modalTitle &&
+    modalDescription &&
+    modalPrice &&
+    closeBtn
+) {
+
+    readButtons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            modal.style.display = "flex";
 
-            modalImage.src = foodData[index].image;
-            modalTitle.textContent = foodData[index].title;
-            modalDescription.textContent = foodData[index].description;
-            modalPrice.textContent = foodData[index].price;
+            // Find the food card
+            const foodCard =
+                button.closest(".food-card");
+
+
+            if (!foodCard) {
+
+                console.log(
+                    "Food card not found"
+                );
+
+                return;
+
+            }
+
+
+            // Get food name from H3
+            const foodTitle =
+                foodCard.querySelector("h3");
+
+
+            if (!foodTitle) {
+
+                console.log(
+                    "Food title not found"
+                );
+
+                return;
+
+            }
+
+
+            // Get exact food name
+            const foodName =
+                foodTitle.textContent.trim();
+
+
+            console.log(
+                "Food selected:",
+                foodName
+            );
+
+
+            // Find food information
+            const food =
+                foodData[foodName];
+
+
+            if (!food) {
+
+                console.log(
+                    "Food data not found:",
+                    foodName
+                );
+
+                return;
+
+            }
+
+
+            // ===========================
+            // Set Modal Image
+            // ===========================
+
+            modalImage.src =
+                food.image;
+
+            modalImage.alt =
+                food.title;
+
+
+            // ===========================
+            // Set Modal Title
+            // ===========================
+
+            modalTitle.textContent =
+                food.title;
+
+
+            // ===========================
+            // Set Modal Description
+            // ===========================
+
+            modalDescription.textContent =
+                food.description;
+
+
+            // ===========================
+            // Set Modal Price
+            // ===========================
+
+            modalPrice.textContent =
+                food.price;
+
+
+            // ===========================
+            // Show Modal
+            // ===========================
+
+            modal.style.display =
+                "flex";
 
         });
 
     });
 
+
+    // ===========================
+    // Close Modal
+    // ===========================
+
     closeBtn.addEventListener("click", () => {
 
-        modal.style.display = "none";
+        modal.style.display =
+            "none";
 
     });
 
-    window.addEventListener("click", (event) => {
+
+    // ===========================
+    // Close Modal Outside
+    // ===========================
+
+    window.addEventListener("click", event => {
 
         if (event.target === modal) {
 
-            modal.style.display = "none";
+            modal.style.display =
+                "none";
+
+        }
+
+    });
+
+
+    // ===========================
+    // Close Modal With Escape
+    // ===========================
+
+    document.addEventListener("keydown", event => {
+
+        if (event.key === "Escape") {
+
+            modal.style.display =
+                "none";
 
         }
 
     });
 
 }
+
 
 // ===========================
 // Gallery Lightbox
 // ===========================
 
-const galleryImages = document.querySelectorAll(".gallery-container img");
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightboxImage");
-const closeLightbox = document.querySelector(".close-lightbox");
+const galleryImages =
+    document.querySelectorAll(
+        ".gallery-container img"
+    );
 
-if (galleryImages.length > 0 && lightbox && lightboxImage && closeLightbox) {
+const lightbox =
+    document.getElementById("lightbox");
+
+const lightboxImage =
+    document.getElementById("lightboxImage");
+
+const closeLightbox =
+    document.querySelector(
+        ".close-lightbox"
+    );
+
+
+if (
+    galleryImages.length > 0 &&
+    lightbox &&
+    lightboxImage &&
+    closeLightbox
+) {
 
     galleryImages.forEach(image => {
 
-        image.addEventListener("click", () => {
+        image.addEventListener(
+            "click",
+            () => {
 
-            lightbox.style.display = "flex";
-            lightboxImage.src = image.src;
+                lightboxImage.src =
+                    image.src;
 
-        });
+                lightboxImage.alt =
+                    image.alt;
+
+                lightbox.style.display =
+                    "flex";
+
+            }
+        );
 
     });
 
-    closeLightbox.addEventListener("click", () => {
 
-        lightbox.style.display = "none";
+    // ===========================
+    // Close Lightbox
+    // ===========================
 
-    });
+    closeLightbox.addEventListener(
+        "click",
+        () => {
 
-    lightbox.addEventListener("click", (e) => {
-
-        if (e.target === lightbox) {
-
-            lightbox.style.display = "none";
+            lightbox.style.display =
+                "none";
 
         }
+    );
 
-    });
+
+    // ===========================
+    // Close Lightbox Outside
+    // ===========================
+
+    lightbox.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target === lightbox
+            ) {
+
+                lightbox.style.display =
+                    "none";
+
+            }
+
+        }
+    );
+
+
+    // ===========================
+    // Close Lightbox With Escape
+    // ===========================
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (event.key === "Escape") {
+
+                lightbox.style.display =
+                    "none";
+
+            }
+
+        }
+    );
 
 }
+
 
 // ===========================
 // Back To Top Button
 // ===========================
 
-const topBtn = document.getElementById("topBtn");
+const topBtn =
+    document.getElementById("topBtn");
 
-window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 300){
+if (topBtn) {
 
-        topBtn.style.display = "block";
+    window.addEventListener(
+        "scroll",
+        () => {
 
-    }else{
+            if (window.scrollY > 300) {
 
-        topBtn.style.display = "none";
+                topBtn.style.display =
+                    "block";
 
-    }
+            } else {
 
-});
+                topBtn.style.display =
+                    "none";
 
-if(topBtn){
+            }
 
-    topBtn.addEventListener("click", () => {
+        }
+    );
 
-        window.scrollTo({
 
-            top:0,
-            behavior:"smooth"
+    topBtn.addEventListener(
+        "click",
+        () => {
 
-        });
+            window.scrollTo({
 
-    });
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+    );
 
 }
+
 
 // ===========================
 // Loading Screen
 // ===========================
 
-window.addEventListener("load", () => {
+window.addEventListener(
+    "load",
+    () => {
 
-    const loader = document.getElementById("loader");
+        const loader =
+            document.getElementById("loader");
 
-    if(loader){
 
-        setTimeout(() => {
+        if (loader) {
 
-            loader.style.display = "none";
+            loader.classList.add(
+                "loader-hide"
+            );
 
-        },1000);
 
-    }
+            setTimeout(
+                () => {
 
-});
+                    loader.style.display =
+                        "none";
 
-// ===========================
-// Loader
-// ===========================
+                },
+                500
+            );
 
-window.addEventListener("load", () => {
-
-    const loader = document.getElementById("loader");
-
-    if (loader) {
-
-        loader.classList.add("loader-hide");
-
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 500);
+        }
 
     }
-
-});
+);
